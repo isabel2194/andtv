@@ -4,7 +4,7 @@ import com.isabeldelalamo_mariahernandez.andtv.model.Usuario
 
 class DbDataMapper {
 
-    fun convertToDomain(usuario: Usuario) = with(usuario) {
+    fun convertToDomain(usuario: com.isabeldelalamo_mariahernandez.andtv.data.db.Usuario) = with(usuario) {
         Usuario(email, password, peliculasFavoritasID)
     }
 

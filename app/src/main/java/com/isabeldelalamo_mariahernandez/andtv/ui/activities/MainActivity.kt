@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Patterns
 import android.view.View
 import com.isabeldelalamo_mariahernandez.andtv.R
+import com.isabeldelalamo_mariahernandez.andtv.model.Usuario
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     private fun validarEntrada(){
         val email = editTextCorreo.text.toString()
         val password = editTextPassword.text.toString()
-
+/*
         if(editTextPasswordRepeat.visibility == View.VISIBLE) {
             val repeatPassword = editTextPasswordRepeat.text.toString()
             if(email.isNullOrEmpty() || password.isNullOrEmpty() || repeatPassword.isNullOrEmpty())
@@ -62,6 +63,12 @@ class MainActivity : AppCompatActivity() {
                     irAPrincipal()
             }
         }
+        */
+
+        //TODO
+        val result = Usuario.getUserByEmail(email)
+        println(result)
+
     }
 
     private fun irAPrincipal(){
