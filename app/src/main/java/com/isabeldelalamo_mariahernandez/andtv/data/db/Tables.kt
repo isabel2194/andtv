@@ -16,6 +16,7 @@ object DayForecastTable {
     const val HIGH = "high"
     const val LOW = "low"
     const val CITY_ID = "cityId"
+<<<<<<< HEAD
 }
 
 object UsuarioTable {
@@ -25,4 +26,6 @@ object UsuarioTable {
     const val NOMBRE = "nombre"
     const val PASSWORD = "password"
     const val PELICULASFAVORITASID = "peliculasFavoritasID"
+=======
+>>>>>>> origin/master
 }

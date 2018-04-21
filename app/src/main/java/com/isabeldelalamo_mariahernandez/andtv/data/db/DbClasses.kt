@@ -15,7 +15,6 @@ class CityForecast(var map: MutableMap<String, Any?>, val dailyForecast: List<Da
     }
 }
 
-
 class DayForecast(var map: MutableMap<String, Any?>) {
     var _id: Long by map
     var date: Long by map
