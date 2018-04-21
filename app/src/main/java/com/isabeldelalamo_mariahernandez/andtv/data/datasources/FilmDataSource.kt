@@ -5,6 +5,7 @@ import com.isabeldelalamo_mariahernandez.andtv.data.server.FilmResult
 
 interface FilmDataSource {
 
-    fun requestFilms(categoryID:String): FilmResult
+    fun requestFilms(categoryID: String): FilmResult
 
     fun requestCategories(): CategoriesResult
+}
