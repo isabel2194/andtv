@@ -2,47 +2,46 @@ package com.isabeldelalamo_mariahernandez.andtv.ui.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
+import android.view.View
 import com.isabeldelalamo_mariahernandez.andtv.R
-import com.isabeldelalamo_mariahernandez.andtv.model.ForecastList
-import com.isabeldelalamo_mariahernandez.andtv.ui.adapters.ForecastListAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.uiThread
+import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initialize()
+
+        buttonEnviar.setOnClickListener{ validarEntrada() }
+
+        buttonCambiarModo.setOnClickListener { cambiarModo() }
+
     }
 
-    private fun initialize() {
-        setSupportActionBar(toolbar)
-        forecastList.layoutManager = LinearLayoutManager(this)
-
-        doAsync() {
-            // Acciones en segundo plano
-            val result = ForecastList.requestForecastByZipCode(33510)
-            if (result != null) {
-                uiThread {
-                    // Actualización de la interfaz con el resultado
-                    forecastList.adapter = ForecastListAdapter(result.dailyForecast) {
-                        startActivity<DetailActivity>(
-                                DetailActivity.EXTRA_DATE to it.dateToString(),
-                                DetailActivity.EXTRA_DESCRIPTION to it.description,
-                                DetailActivity.EXTRA_MIN_TEMPERATURE to it.low,
-                                DetailActivity.EXTRA_MAX_TEMPERATURE to it.high
-                        )
-                    }
-                }
-            }
+    private fun cambiarModo(){
+        if(editTextPasswordRepeat.visibility == View.VISIBLE) {
+            editTextPasswordRepeat.visibility = View.INVISIBLE
+            buttonCambiarModo.text = getString(R.string.crearUsuario)
         }
-
+        else {
+            editTextPasswordRepeat.visibility = View.VISIBLE
+            buttonCambiarModo.text = getString(R.string.login)
+        }
     }
 
+    private fun validarEntrada(){
+        if(editTextPasswordRepeat.visibility == View.VISIBLE) {
+        }
+        else {
 
+        }
+        irAPrincipal()
+    }
+
+    private fun irAPrincipal(){
+        startActivity<Principal>()
+    }
 }
 
