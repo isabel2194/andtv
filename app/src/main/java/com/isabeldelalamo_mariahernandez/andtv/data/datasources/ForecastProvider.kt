@@ -1,7 +1,5 @@
 package com.isabeldelalamo_mariahernandez.andtv.data.datasources
 
-import com.isabeldelalamo_mariahernandez.andtv.data.db.ForecastDb
-import com.isabeldelalamo_mariahernandez.andtv.data.server.ForecastServer
 import com.isabeldelalamo_mariahernandez.andtv.model.ForecastList
 
 object ForecastProvider {
