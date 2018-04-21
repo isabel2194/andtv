@@ -21,7 +21,6 @@ class UsuarioDb: UsuarioDataSource {
 
         with(dbDataMapper.convertFromDomain(usuario)) {
             val values = ContentValues();
-            values.put("nombre",usuario.nombre)
             values.put("email",usuario.email)
             values.put("password",usuario.password)
             insert(UsuarioTable.NAME, null,values)

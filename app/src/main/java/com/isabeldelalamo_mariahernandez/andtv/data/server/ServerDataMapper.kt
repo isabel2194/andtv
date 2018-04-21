@@ -7,11 +7,8 @@ import java.util.concurrent.TimeUnit
 class ServerDataMapper {
 
     fun convertToDomain(usuario: UsuarioResult): Usuario =
-            Usuario(nombre =usuario.nombre,
-                    email=usuario.email,
+            Usuario(email=usuario.email,
                     password = usuario.password,
                     peliculasFavoritasID = usuario.peliculasFavoritas)
-
-
 
 }

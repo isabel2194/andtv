@@ -5,5 +5,5 @@ import java.text.DateFormat
 import java.util.*
 
 
-data class Usuario(val email:String, val nombre:String, val password:String, val peliculasFavoritasID:List<Int>) {
+data class Usuario(val email:String, val password:String, val peliculasFavoritasID:List<Int>) {
 }
