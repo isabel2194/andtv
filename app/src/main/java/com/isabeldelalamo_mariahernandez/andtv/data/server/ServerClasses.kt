@@ -1,7 +1,7 @@
 package com.isabeldelalamo_mariahernandez.andtv.data.server
 
 
-data class CategoriesResult(val Category:List<Category>)
+data class CategoriesResult(val genres:List<Category>)
 
 data class Category(val id:Int, val name:String)
 

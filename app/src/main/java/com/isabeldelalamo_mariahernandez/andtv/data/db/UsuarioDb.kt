@@ -15,7 +15,7 @@ class UsuarioDb: UsuarioDataSource {
 
 
     fun getUserByEmail(email: String) = usuarioDbHelper.use{
-        val emailWhere = "${UsuarioTable.EMAIL} = ?"
+        val emailWhere = "${UsuarioTable.EMAIL} = $email"
         val usuario = select(UsuarioTable.NAME)
                 .whereSimple(emailWhere)
                 .parseOpt(object : MapRowParser<com.isabeldelalamo_mariahernandez.andtv.data.db.Usuario> {
