@@ -17,7 +17,3 @@ data class Forecast(val date: Long, val description: String, val high: Int, val 
         return df.format(date)
     }
 }
-
-
-data class Usuario(val email:String, val nombre:String, val password:String, val peliculasFavoritasID:List<Int>) {
-}

@@ -2,7 +2,6 @@ package com.isabeldelalamo_mariahernandez.andtv.data.db
 
 import com.isabeldelalamo_mariahernandez.andtv.model.Forecast
 import com.isabeldelalamo_mariahernandez.andtv.model.ForecastList
-import com.isabeldelalamo_mariahernandez.andtv.model.Usuario
 
 class DbDataMapper {
     fun convertToDomain(cityForecast: CityForecast) = with(cityForecast) {
