@@ -21,3 +21,11 @@ data class Forecast(val date: Long, val description: String, val high: Int, val 
 
 data class Usuario(val email:String, val nombre:String, val password:String, val peliculasFavoritasID:List<Int>) {
 }
+
+data class Film(val title:String, val description:String val coverPage:String) {
+
+}
+
+data class Category(val name:String, val id:String){
+
+}
