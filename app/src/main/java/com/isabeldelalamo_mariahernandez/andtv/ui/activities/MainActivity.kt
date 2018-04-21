@@ -2,6 +2,7 @@ package com.isabeldelalamo_mariahernandez.andtv.ui.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Patterns
 import android.view.View
 import com.isabeldelalamo_mariahernandez.andtv.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         buttonEnviar.setOnClickListener{ validarEntrada() }
 
         buttonCambiarModo.setOnClickListener { cambiarModo() }
-
     }
 
     private fun cambiarModo(){
@@ -32,16 +32,39 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun validarEntrada(){
+        val email = editTextCorreo.text.toString()
+        val password = editTextPassword.text.toString()
+
         if(editTextPasswordRepeat.visibility == View.VISIBLE) {
+            val repeatPassword = editTextPasswordRepeat.text.toString()
+            if(email.isNullOrEmpty() || password.isNullOrEmpty() || repeatPassword.isNullOrEmpty())
+                toast(getString(R.string.rellenarValores))
+            else if(password != repeatPassword)
+                toast(getString(R.string.contrasenasNoIguales))
+            else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
+                toast(getString(R.string.emailValido))
+            else{
+                //comprobar usuario con ese email
+                if(false)
+                    toast(getString(R.string.usuarioYaExiste))
+                else
+                    irAPrincipal()
+            }
         }
         else {
-
+            if(email.isNullOrEmpty() || password.isNullOrEmpty())
+                toast(getString(R.string.rellenarValores))
+            else{
+                //comprobar usuario con ese email
+                if(false)
+                    toast(getString(R.string.usuarioYaExiste))
+                else
+                    irAPrincipal()
+            }
         }
-        irAPrincipal()
     }
 
     private fun irAPrincipal(){
         startActivity<Principal>()
     }
 }
-

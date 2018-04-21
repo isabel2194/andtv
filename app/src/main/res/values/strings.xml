@@ -12,4 +12,8 @@
     <string name="login">Login</string>
     <string name="enviar">Enviar</string>
     <string name="crearUsuario">Crear usuario</string>
+    <string name="rellenarValores">Todos los campos son obligatorios</string>
+    <string name="contrasenasNoIguales">Las contraseñas no son iguales</string>
+    <string name="emailValido">Formato de email inválido</string>
+    <string name="usuarioYaExiste">El email introducido ya existe</string>
 </resources>
