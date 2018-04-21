@@ -5,12 +5,10 @@ import com.isabeldelalamo_mariahernandez.andtv.model.ForecastList
 import com.isabeldelalamo_mariahernandez.andtv.model.Usuario
 
 class DbDataMapper {
-
-    fun convertToDomain(usuario: Usuario) = with(usuario) {
-        val daily = usuario.map { convertUsuarioToDomain(it) }
-        Usuario(email, nombre, password, peliculasFavoritasID)
+    fun convertToDomain(cityForecast: CityForecast) = with(cityForecast) {
+        val daily = dailyForecast.map { convertDayForecastToDomain(it) }
+        ForecastList(_id, city, country, daily)
     }
-
 
     private fun convertDayForecastToDomain(dayForecast: DayForecast) = with(dayForecast) {
         Forecast(date, description, high, low)
