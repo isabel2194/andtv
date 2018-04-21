@@ -17,7 +17,6 @@ class UsuarioDbHelper : ManagedSQLiteOpenHelper(App.instance,
         db.createTable(UsuarioTable.NAME, true,
                 UsuarioTable.ID to INTEGER + PRIMARY_KEY + AUTOINCREMENT,
                 UsuarioTable.EMAIL to TEXT,
-                UsuarioTable.NOMBRE to TEXT,
                 UsuarioTable.PASSWORD to TEXT,
                 UsuarioTable.PELICULASFAVORITASID to TEXT)
     }

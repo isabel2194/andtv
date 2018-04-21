@@ -13,4 +13,4 @@ data class Film(val adult:Boolean, val backdrop_path:String, val genre_ids:List<
                 val popularity:Double, val title:String, val video:Boolean, val vote_average:Double,
                 val vote_count:Int)
 
-data class UsuarioResult(val nombre:String, val email:String, val password:String, val peliculasFavoritas:List<Int>)
+data class UsuarioResult( val email:String, val password:String, val peliculasFavoritas:List<Int>)
