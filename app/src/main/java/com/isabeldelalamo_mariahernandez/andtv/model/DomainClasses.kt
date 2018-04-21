@@ -1,6 +1,6 @@
-package com.danimeana.weatherapp.model
+package com.isabeldelalamo_mariahernandez.andtv.model
 
-import com.danimeana.weatherapp.data.datasources.ForecastProvider
+import com.isabeldelalamo_mariahernandez.andtv.data.datasources.ForecastProvider
 import java.text.DateFormat
 import java.util.*
 

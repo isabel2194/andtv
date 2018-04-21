@@ -1,7 +1,7 @@
-package com.danimeana.weatherapp.data.db
+package com.isabeldelalamo_mariahernandez.andtv.data.db
 
-import com.danimeana.weatherapp.data.datasources.ForecastDataSource
-import com.danimeana.weatherapp.model.ForecastList
+import com.isabeldelalamo_mariahernandez.andtv.data.datasources.ForecastDataSource
+import com.isabeldelalamo_mariahernandez.andtv.model.ForecastList
 import org.jetbrains.anko.db.MapRowParser
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select

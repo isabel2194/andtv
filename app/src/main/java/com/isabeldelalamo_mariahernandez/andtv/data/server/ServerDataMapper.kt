@@ -1,9 +1,9 @@
-package com.danimeana.weatherapp.data.server
+package com.isabeldelalamo_mariahernandez.andtv.data.server
 
-import com.danimeana.weatherapp.model.ForecastList
+import com.isabeldelalamo_mariahernandez.andtv.model.ForecastList
 import java.util.*
 import java.util.concurrent.TimeUnit
-import com.danimeana.weatherapp.model.Forecast as ModelForecast
+import com.isabeldelalamo_mariahernandez.andtv.model.Forecast as ModelForecast
 
 class ServerDataMapper {
 

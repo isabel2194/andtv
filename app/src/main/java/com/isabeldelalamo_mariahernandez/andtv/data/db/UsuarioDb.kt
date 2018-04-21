@@ -1,6 +1,6 @@
 package com.isabeldelalamo_mariahernandez.andtv.data.db
 
-import com.danimeana.weatherapp.data.db.UsuarioTable
+import com.isabeldelalamo_mariahernandez.andtv.data.db.UsuarioTable
 import com.isabeldelalamo_mariahernandez.andtv.data.datasources.UsuarioDataSource
 import org.jetbrains.anko.db.MapRowParser
 import org.jetbrains.anko.db.insert

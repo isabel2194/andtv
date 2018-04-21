@@ -1,8 +1,8 @@
-package com.danimeana.weatherapp.data.datasources
+package com.isabeldelalamo_mariahernandez.andtv.data.datasources
 
-import com.danimeana.weatherapp.data.db.ForecastDb
-import com.danimeana.weatherapp.data.server.ForecastServer
-import com.danimeana.weatherapp.model.ForecastList
+import com.isabeldelalamo_mariahernandez.andtv.data.db.ForecastDb
+import com.isabeldelalamo_mariahernandez.andtv.data.server.ForecastServer
+import com.isabeldelalamo_mariahernandez.andtv.model.ForecastList
 
 object ForecastProvider {
     private const val DAYS = 5

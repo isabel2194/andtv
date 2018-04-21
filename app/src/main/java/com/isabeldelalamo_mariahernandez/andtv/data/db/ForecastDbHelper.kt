@@ -1,7 +1,7 @@
-package com.danimeana.weatherapp.data.db
+package com.isabeldelalamo_mariahernandez.andtv.data.db
 
 import android.database.sqlite.SQLiteDatabase
-import com.danimeana.weatherapp.ui.App
+import com.isabeldelalamo_mariahernandez.andtv.ui.App
 import org.jetbrains.anko.db.*
 
 class ForecastDbHelper() : ManagedSQLiteOpenHelper(App.instance,

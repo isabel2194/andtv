@@ -1,8 +1,8 @@
-package com.danimeana.weatherapp.ui.activities
+package com.isabeldelalamo_mariahernandez.andtv.ui.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.danimeana.weatherapp.R
+import com.isabeldelalamo_mariahernandez.andtv.R
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.card_forecast_item.*
 

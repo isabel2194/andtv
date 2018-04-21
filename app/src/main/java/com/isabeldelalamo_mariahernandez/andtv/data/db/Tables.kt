@@ -1,4 +1,4 @@
-package com.danimeana.weatherapp.data.db
+package com.isabeldelalamo_mariahernandez.andtv.data.db
 
 
 object CityForecastTable {

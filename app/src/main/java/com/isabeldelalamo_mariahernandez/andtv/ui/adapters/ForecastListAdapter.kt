@@ -1,11 +1,11 @@
-package com.danimeana.weatherapp.ui.adapters
+package com.isabeldelalamo_mariahernandez.andtv.ui.adapters
 
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.danimeana.weatherapp.R
-import com.danimeana.weatherapp.model.Forecast
+import com.isabeldelalamo_mariahernandez.andtv.R
+import com.isabeldelalamo_mariahernandez.andtv.model.Forecast
 import kotlinx.android.synthetic.main.card_forecast_item.view.*
 
 //Recibe en el constructor los elementos de la lista y la acción al pulsar.

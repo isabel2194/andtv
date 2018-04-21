@@ -1,6 +1,6 @@
-package com.danimeana.weatherapp.data.datasources
+package com.isabeldelalamo_mariahernandez.andtv.data.datasources
 
-import com.danimeana.weatherapp.model.ForecastList
+import com.isabeldelalamo_mariahernandez.andtv.model.ForecastList
 
 interface ForecastDataSource {
     fun requestForecastByZipCode(zipCode: Long, date: Long): ForecastList?

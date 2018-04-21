@@ -1,14 +1,16 @@
 package com.isabeldelalamo_mariahernandez.andtv.data.db
 
-import com.danimeana.weatherapp.model.Forecast
-import com.danimeana.weatherapp.model.ForecastList
-import com.danimeana.weatherapp.model.Usuario
+import com.isabeldelalamo_mariahernandez.andtv.model.Forecast
+import com.isabeldelalamo_mariahernandez.andtv.model.ForecastList
+import com.isabeldelalamo_mariahernandez.andtv.model.Usuario
 
 class DbDataMapper {
+
     fun convertToDomain(usuario: Usuario) = with(usuario) {
         val daily = usuario.map { convertUsuarioToDomain(it) }
-        Usuario(_id, email, name, daily)
+        Usuario(email, nombre, password, peliculasFavoritasID)
     }
+
 
     private fun convertDayForecastToDomain(dayForecast: DayForecast) = with(dayForecast) {
         Forecast(date, description, high, low)

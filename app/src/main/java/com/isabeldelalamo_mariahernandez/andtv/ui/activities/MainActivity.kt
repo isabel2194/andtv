@@ -1,11 +1,11 @@
-package com.danimeana.weatherapp.ui.activities
+package ccom.isabeldelalamo_mariahernandez.andtv.ui.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import com.danimeana.weatherapp.R
-import com.danimeana.weatherapp.model.ForecastList
-import com.danimeana.weatherapp.ui.adapters.ForecastListAdapter
+import com.isabeldelalamo_mariahernandez.andtv.R
+import com.isabeldelalamo_mariahernandez.andtv.model.ForecastList
+import com.isabeldelalamo_mariahernandez.andtv.ui.adapters.ForecastListAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.startActivity

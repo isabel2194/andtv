@@ -1,4 +1,4 @@
-package com.danimeana.weatherapp.data.server
+package com.isabeldelalamo_mariahernandez.andtv.data.server
 
 data class ForecastResult(val city: City, val list: List<Forecast>)
 

@@ -1,8 +1,8 @@
-package com.danimeana.weatherapp.data.server
+package com.isabeldelalamo_mariahernandez.andtv.data.server
 
-import com.danimeana.weatherapp.data.db.ForecastDb
-import com.danimeana.weatherapp.data.datasources.ForecastDataSource
-import com.danimeana.weatherapp.model.ForecastList
+import com.isabeldelalamo_mariahernandez.andtv.data.db.ForecastDb
+import com.isabeldelalamo_mariahernandez.andtv.data.datasources.ForecastDataSource
+import com.isabeldelalamo_mariahernandez.andtv.model.ForecastList
 import com.google.gson.Gson
 import java.net.URL
 
