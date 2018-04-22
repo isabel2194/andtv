@@ -69,8 +69,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline4"
-        tools:background="#d45b5b">
+        app:layout_constraintTop_toBottomOf="@+id/guideline4">
 
         <LinearLayout
             android:id="@+id/LinearLayoutPrincipalCategories"
@@ -88,10 +87,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:fontFamily="casual"
+                android:fontFamily="casual"
                 tools:layout_editor_absoluteY="155dp"
-                tools:textAlignment="center"
-                tools:textSize="24sp" />
+                android:textAlignment="center"
+                android:textSize="32sp" />
 
         </LinearLayout>
     </ScrollView>

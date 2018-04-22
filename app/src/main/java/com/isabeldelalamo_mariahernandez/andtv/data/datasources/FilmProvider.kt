@@ -1,5 +1,6 @@
 package com.isabeldelalamo_mariahernandez.andtv.data.datasources
 
+import com.isabeldelalamo_mariahernandez.andtv.data.server.Film
 import com.isabeldelalamo_mariahernandez.andtv.data.server.FilmResult
 import com.isabeldelalamo_mariahernandez.andtv.data.server.FilmServer
 
@@ -9,5 +10,9 @@ object FilmProvider {
 
     fun getFilmsByCategory(categoryID:String): FilmResult {
         return SOURCE.requestFilms(categoryID)
+    }
+
+    fun getDataFilm(filmID:Int): Film {
+        return SOURCE.requestFilm(filmID)
     }
 }

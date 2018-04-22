@@ -53,7 +53,7 @@ class Principal : AppCompatActivity() {
 
     fun detalleCategoria(id:Int){
         startActivity<ListadoActivity>(
-                ListadoActivity.PARAM_CATEGORY to id)
+                ListadoActivity.PARAM_CATEGORY to id, ListadoActivity.PARAM_USER to intent.getStringExtra(PARAM_EMAIL))
     }
 
 }

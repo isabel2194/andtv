@@ -23,6 +23,11 @@ class FilmServer: FilmDataSource {
         var categoriesJsonStr = URL(CATEGORIES_URL).readText()
         var result = Gson().fromJson(categoriesJsonStr,CategoriesResult::class.java)
         return result
+    }
 
+        override fun requestFilm(filmID:Int):Film{
+        val filmJsonResult = URL("https://api.themoviedb.org/3/movie/$filmID?api_key=${API_KEY}&language=${COUNTRY_CODE}").readText()
+        val result = Gson().fromJson(filmJsonResult,Film::class.java)
+        return result
     }
 }

@@ -6,10 +6,11 @@ import com.isabeldelalamo_mariahernandez.andtv.data.datasources.UsuarioProvider
 import java.util.*
 
 
-data class Usuario(val email:String, val password:String, val peliculasFavoritasID:List<Int>) {
+data class Usuario(val email:String, val password:String, val peliculasFavoritasID:MutableList<Int>) {
     companion object {
         fun getUserByEmail(em:String) = UsuarioProvider.getUserByEmail(em)
         fun saveUsuario(em:String, pass:String) = UsuarioProvider.saveUsuario(em, pass)
+        fun addFavoriteFilm(idFilm:Int,email:String) = UsuarioProvider.addFavoriteFilm(idFilm,email)
     }
 }
 
