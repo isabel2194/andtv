@@ -32,14 +32,15 @@ class UsuarioDb : UsuarioDataSource {
 
     fun updateUsuario(filmId:Int,email: String)= usuarioDbHelper.use {
         val usuario = getUserByEmail(email)
-        if(usuario!=null) {
+        if(usuario!=null && usuario.peliculasFavoritasID.indexOf(filmId) == -1){
             usuario.peliculasFavoritasID.add(filmId)
-
 
             val emailWhere = "${UsuarioTable.EMAIL} = ?"
             val newValues: ContentValues = ContentValues()
             newValues.put(UsuarioTable.PELICULASFAVORITASID, usuario.peliculasFavoritasID.toString())
             update(UsuarioTable.NAME, newValues, emailWhere, arrayOf(email))
+            true
         }
+        false
     }
 }

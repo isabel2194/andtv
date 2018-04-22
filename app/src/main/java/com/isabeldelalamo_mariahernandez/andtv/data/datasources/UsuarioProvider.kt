@@ -14,7 +14,7 @@ object UsuarioProvider {
         SOURCE.saveUsuario(em, pass)
     }
 
-    fun addFavoriteFilm(idFilm:Int,email:String){
-        SOURCE.updateUsuario(idFilm,email)
+    fun addFavoriteFilm(idFilm:Int,email:String) : Boolean{
+        return SOURCE.updateUsuario(idFilm,email)
     }
 }
