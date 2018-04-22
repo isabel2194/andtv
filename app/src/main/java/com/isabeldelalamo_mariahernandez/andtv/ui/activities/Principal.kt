@@ -2,6 +2,8 @@ package com.isabeldelalamo_mariahernandez.andtv.ui.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
@@ -23,8 +25,6 @@ class Principal : AppCompatActivity() {
     }
 
     private fun initialize() {
-        textEmail.text = intent.getStringExtra(PARAM_EMAIL)
-
         val layoutCategories = findViewById(R.id.LinearLayoutPrincipalCategories) as LinearLayout
 
         doAsync() {
@@ -45,10 +45,6 @@ class Principal : AppCompatActivity() {
                 }
             }
         }
-
-        btnCerrarSesion.setOnClickListener{
-            startActivity<MainActivity>()
-        }
     }
 
     fun detalleCategoria(id:Int){
@@ -56,4 +52,24 @@ class Principal : AppCompatActivity() {
                 ListadoActivity.PARAM_CATEGORY to id)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menu!!.add(0,0,0, "Favoritos")
+        menu!!.add(0,1,0, "Cerrar sesion")
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return when(item!!.itemId){
+            0 ->{
+                startActivity<FavoritosActivity>(
+                        FavoritosActivity.PARAM_EMAIL to intent.getStringExtra(PARAM_EMAIL))
+                true
+            }
+            1 ->{
+                startActivity<MainActivity>()
+                true
+            }
+            else -> false
+        }
+    }
 }
