@@ -2,9 +2,8 @@ package com.isabeldelalamo_mariahernandez.andtv.ui.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
 import com.isabeldelalamo_mariahernandez.andtv.R
-import com.isabeldelalamo_mariahernandez.andtv.model.Category
+import android.support.v7.widget.LinearLayoutManager
 import com.isabeldelalamo_mariahernandez.andtv.model.Film
 import com.isabeldelalamo_mariahernandez.andtv.ui.adapters.FilmListAdapter
 import kotlinx.android.synthetic.main.activity_listado.*
@@ -38,7 +37,7 @@ class ListadoActivity : AppCompatActivity() {
                     // Actualización de la interfaz con el resultado
                     forecastList.adapter = FilmListAdapter(filmResult.results) {
                         startActivity<DetailActivity>(
-                                DetailActivity.TITLE to it.title
+                                DetailActivity.PARAM_FILM to it.id
                         )
                     }
 
