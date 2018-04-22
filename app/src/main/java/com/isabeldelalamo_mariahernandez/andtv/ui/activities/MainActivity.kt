@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                 //comprobar usuario con ese email
                 val userResult = Usuario.getUserByEmail(email)
                 if(userResult != null && userResult.password == password)
-                    irAPrincipal()
+                    irAPrincipal(userResult.email)
                 else
                     toast(getString(R.string.loginInvalido))
             }
@@ -94,7 +94,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun irAPrincipal(){
-        startActivity<Principal>()
+    private fun irAPrincipal(email:String){
+        startActivity<Principal>(
+                Principal.PARAM_EMAIL to email)
     }
 }
