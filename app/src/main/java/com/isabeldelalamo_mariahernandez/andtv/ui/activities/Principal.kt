@@ -8,8 +8,7 @@ import android.widget.LinearLayout
 import com.isabeldelalamo_mariahernandez.andtv.R
 import com.isabeldelalamo_mariahernandez.andtv.data.datasources.CategoriesProvider
 import kotlinx.android.synthetic.main.activity_principal.*
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
+import org.jetbrains.anko.*
 
 class Principal : AppCompatActivity() {
 
@@ -19,13 +18,13 @@ class Principal : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_principal)
-        textEmail.text = intent.getStringExtra(PARAM_EMAIL)
         initialize()
     }
 
     private fun initialize() {
+        textEmail.text = intent.getStringExtra(PARAM_EMAIL)
+
         val layoutCategories = findViewById(R.id.LinearLayoutPrincipalCategories) as LinearLayout
 
         doAsync() {
@@ -42,6 +41,10 @@ class Principal : AppCompatActivity() {
                     }
                 }
             }
+        }
+
+        btnCerrarSesion.setOnClickListener{
+            startActivity<MainActivity>()
         }
 
 
