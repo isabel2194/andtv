@@ -3,13 +3,12 @@ package com.isabeldelalamo_mariahernandez.andtv.ui.activities
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.ViewGroup
-import android.widget.Button
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.isabeldelalamo_mariahernandez.andtv.R
-import com.isabeldelalamo_mariahernandez.andtv.data.datasources.CategoriesProvider
 import com.isabeldelalamo_mariahernandez.andtv.data.datasources.FilmProvider
 import kotlinx.android.synthetic.main.activity_detail.*
 import org.jetbrains.anko.doAsync
@@ -57,22 +56,21 @@ class DetailActivity : AppCompatActivity() {
         }
 
         btnDetailAtras.setOnClickListener{
-            startActivity<ListadoActivity>(ListadoActivity.PARAM_CATEGORY to categoryId)
+            startActivity<ListadoActivity>(ListadoActivity.PARAM_CATEGORY to categoryId,
+                    ListadoActivity.PARAM_USER to intent.getStringExtra(DetailActivity.PARAM_USER))
         }
 
         btnDetailFavorito.setOnClickListener{
             añadirFavorito(filmId)
         }
-
     }
 
     fun añadirFavorito(filmId:Int){
-        val actualUser = intent.getStringExtra(DetailActivity.PARAM_USER)
-        Usuario.addFavoriteFilm(filmId,actualUser)
+        Usuario.addFavoriteFilm(filmId, intent.getStringExtra(DetailActivity.PARAM_USER))
         toast("Pelicula añadida a la lista de favoritos")
     }
 
-    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menu!!.add(0,0,0, "Categorías")
         menu!!.add(0,1,0, "Favoritos")
         menu!!.add(0,2,0, "Cerrar sesion")
@@ -83,12 +81,12 @@ class DetailActivity : AppCompatActivity() {
         return when(item!!.itemId){
             0 ->{
                 startActivity<Principal>(
-                        Principal.PARAM_EMAIL to intent.getStringExtra(Principal.PARAM_EMAIL))
+                        Principal.PARAM_EMAIL to intent.getStringExtra(DetailActivity.PARAM_USER))
                 true
             }
             1 ->{
                 startActivity<FavoritosActivity>(
-                        FavoritosActivity.PARAM_EMAIL to intent.getStringExtra(Principal.PARAM_EMAIL))
+                        FavoritosActivity.PARAM_EMAIL to intent.getStringExtra(DetailActivity.PARAM_USER))
                 true
             }
             2 ->{
@@ -97,5 +95,5 @@ class DetailActivity : AppCompatActivity() {
             }
             else -> false
         }
-    }*/
+    }
 }

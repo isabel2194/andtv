@@ -4,7 +4,6 @@ import android.content.ContentValues
 import com.isabeldelalamo_mariahernandez.andtv.data.datasources.UsuarioDataSource
 import org.jetbrains.anko.db.MapRowParser
 import org.jetbrains.anko.db.select
-import org.jetbrains.anko.db.update
 
 
 class UsuarioDb : UsuarioDataSource {
@@ -33,14 +32,14 @@ class UsuarioDb : UsuarioDataSource {
 
     fun updateUsuario(filmId:Int,email: String)= usuarioDbHelper.use {
         val usuario = getUserByEmail(email)
-
         if(usuario!=null) {
             usuario.peliculasFavoritasID.add(filmId)
 
-            val pares1= Pair("email", usuario.email)
-            val pares2= Pair("password", usuario.password)
-            val pares3= Pair("peliculasFavoritasID", usuario.peliculasFavoritasID.toString())
-            update(UsuarioTable.NAME, pares1,pares2,pares3)
+
+            val emailWhere = "${UsuarioTable.EMAIL} = ?"
+            val newValues: ContentValues = ContentValues()
+            newValues.put(UsuarioTable.PELICULASFAVORITASID, usuario.peliculasFavoritasID.toString())
+            update(UsuarioTable.NAME, newValues, emailWhere, arrayOf(email))
         }
     }
 }

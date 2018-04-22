@@ -30,24 +30,18 @@ class FavoritosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favoritos)
-
         initialize()
     }
 
     fun initialize(){
-        var email = intent.getStringExtra(FavoritosActivity.PARAM_EMAIL)
-        val userResult = Usuario.getUserByEmail(email)
+        val userResult = Usuario.getUserByEmail(intent.getStringExtra(FavoritosActivity.PARAM_EMAIL))
         forecastFavList.layoutManager = LinearLayoutManager(this)
-        /*
-        if(userResult != null &&  userResult.peliculasFavoritasID.isNotEmpty())
-            userResult.peliculasFavoritasID.forEach{
 
-        }
-        */
-        var lista = listOf(384680, 57201, 281957)
-        doAsync() {
-            val listaFilm: MutableList<Film> = FilmProvider.getFilmsById(lista)
-            if (listaFilm != null) {
+        println("++++++++++++++++ " + userResult.toString())
+
+        if(userResult != null &&  userResult.peliculasFavoritasID.isNotEmpty())
+            doAsync() {
+                val listaFilm: MutableList<Film> = FilmProvider.getFilmsById(userResult.peliculasFavoritasID)
                 uiThread {
                     forecastFavList.adapter = FilmListAdapter(listaFilm) {
                         startActivity<DetailActivity>(
@@ -57,7 +51,7 @@ class FavoritosActivity : AppCompatActivity() {
                 }
             }
         }
-    }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menu!!.add(0,0,0, "Categorías")
@@ -69,7 +63,7 @@ class FavoritosActivity : AppCompatActivity() {
         return when (item!!.itemId) {
             0 -> {
                 startActivity<Principal>(
-                        Principal.PARAM_EMAIL to intent.getStringExtra(Principal.PARAM_EMAIL))
+                        Principal.PARAM_EMAIL to intent.getStringExtra(FavoritosActivity.PARAM_EMAIL))
                 true
             }
 

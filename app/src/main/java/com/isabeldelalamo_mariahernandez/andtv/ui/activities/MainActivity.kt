@@ -21,9 +21,6 @@ class MainActivity : AppCompatActivity() {
         buttonEnviar.setOnClickListener{ validarEntrada() }
 
         buttonCambiarModo.setOnClickListener { cambiarModo() }
-
-        startActivity<Principal>(
-                Principal.PARAM_EMAIL to "manolo")
     }
 
     private fun cambiarModo(){

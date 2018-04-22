@@ -25,7 +25,6 @@ class ListadoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listado)
-
         initialize()
     }
 
@@ -63,12 +62,12 @@ class ListadoActivity : AppCompatActivity() {
         return when(item!!.itemId){
             0 ->{
                 startActivity<Principal>(
-                        Principal.PARAM_EMAIL to intent.getStringExtra(Principal.PARAM_EMAIL))
+                        Principal.PARAM_EMAIL to intent.getStringExtra(ListadoActivity.PARAM_USER))
                 true
             }
             1 ->{
                 startActivity<FavoritosActivity>(
-                        FavoritosActivity.PARAM_EMAIL to intent.getStringExtra(Principal.PARAM_EMAIL))
+                        FavoritosActivity.PARAM_EMAIL to intent.getStringExtra(ListadoActivity.PARAM_USER))
                 true
             }
             2 ->{
