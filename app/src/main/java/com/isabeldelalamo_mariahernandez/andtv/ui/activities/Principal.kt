@@ -37,6 +37,9 @@ class Principal : AppCompatActivity() {
                         buttonCategory.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
                         buttonCategory.text = it.name
                         buttonCategory.id = it.id
+                        buttonCategory.setOnClickListener{
+                            detalleCategoria(buttonCategory.id)
+                        }
                         layoutCategories.addView(buttonCategory)
                     }
                 }
@@ -46,8 +49,11 @@ class Principal : AppCompatActivity() {
         btnCerrarSesion.setOnClickListener{
             startActivity<MainActivity>()
         }
+    }
 
-
+    fun detalleCategoria(id:Int){
+        startActivity<ListadoActivity>(
+                ListadoActivity.PARAM_CATEGORY to id)
     }
 
 }

@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activities.Principal"></activity>
+        <activity android:name=".ui.activities.ListadoActivity"></activity>
     </application>
 
 </manifest>

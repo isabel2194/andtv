@@ -9,10 +9,7 @@ import kotlinx.android.synthetic.main.card_forecast_item.*
 class DetailActivity : AppCompatActivity() {
 
     companion object {
-        const val EXTRA_DATE = "DetailActivity::date"
-        const val EXTRA_DESCRIPTION = "DetailActivity::description"
-        const val EXTRA_MIN_TEMPERATURE = "DetailActivity::minTemperature"
-        const val EXTRA_MAX_TEMPERATURE = "DetailActivity::maxTemperature"
+        const val TITLE = "DetailActivity::title"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,10 +21,11 @@ class DetailActivity : AppCompatActivity() {
     private fun initialize() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
+/*
         txDate.text = intent.getStringExtra(EXTRA_DATE)
         txDescription.text = intent.getStringExtra(EXTRA_DESCRIPTION)
         txMinTemperature.text = "${intent.getDoubleExtra(EXTRA_MIN_TEMPERATURE, 0.0)}º"
         txMaxTemperature.text = "${intent.getDoubleExtra(EXTRA_MAX_TEMPERATURE, 0.0)}º"
+        */
     }
 }
