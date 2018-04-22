@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.isabeldelalamo_mariahernandez.andtv.R
 import android.support.v7.widget.LinearLayoutManager
+import android.view.Menu
+import android.view.MenuItem
 import com.isabeldelalamo_mariahernandez.andtv.model.Film
 import com.isabeldelalamo_mariahernandez.andtv.ui.adapters.FilmListAdapter
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -47,6 +49,33 @@ class ListadoActivity : AppCompatActivity() {
 
                 }
             }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menu!!.add(0,0,0, "Categorías")
+        menu!!.add(0,1,0, "Favoritos")
+        menu!!.add(0,2,0, "Cerrar sesion")
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return when(item!!.itemId){
+            0 ->{
+                startActivity<Principal>(
+                        Principal.PARAM_EMAIL to intent.getStringExtra(Principal.PARAM_EMAIL))
+                true
+            }
+            1 ->{
+                startActivity<FavoritosActivity>(
+                        FavoritosActivity.PARAM_EMAIL to intent.getStringExtra(Principal.PARAM_EMAIL))
+                true
+            }
+            2 ->{
+                startActivity<MainActivity>()
+                true
+            }
+            else -> false
         }
     }
 

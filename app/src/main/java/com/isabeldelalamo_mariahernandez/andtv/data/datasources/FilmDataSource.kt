@@ -11,4 +11,6 @@ interface FilmDataSource {
     fun requestCategories(): CategoriesResult
 
     fun requestFilm(filmID:Int): Film
+
+    fun requestFilmById(filmID:String): Film
 }

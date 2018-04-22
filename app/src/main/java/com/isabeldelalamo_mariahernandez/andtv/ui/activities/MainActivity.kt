@@ -3,6 +3,8 @@ package com.isabeldelalamo_mariahernandez.andtv.ui.activities
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Patterns
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import com.isabeldelalamo_mariahernandez.andtv.R
 import com.isabeldelalamo_mariahernandez.andtv.model.Usuario
@@ -75,10 +77,6 @@ class MainActivity : AppCompatActivity() {
                     toast(getString(R.string.loginInvalido))
             }
         }
-
-
-
-
     }
 
     private fun irAPrincipal(email:String){

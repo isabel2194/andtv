@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.isabeldelalamo_mariahernandez.andtv.R
 import com.isabeldelalamo_mariahernandez.andtv.data.server.Film
-import com.isabeldelalamo_mariahernandez.andtv.data.server.FilmResult
 import kotlinx.android.synthetic.main.card_forecast_item.view.*
 
 //Recibe en el constructor los elementos de la lista y la acción al pulsar.
