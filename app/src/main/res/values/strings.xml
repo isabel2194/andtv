@@ -20,4 +20,11 @@
     <string name="loginInvalido">Usuario o contraseña incorrectos</string>
     <string name="verFavoritos">Favoritos</string>
     <string name="titulo">Título</string>
+    <string name="categorias">Categorías</string>
+    <string name="categoriasMay">CATEGORÍAS</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="favoritosMay">FAVORITOS</string>
+    <string name="cerrarSesion">Cerrar sesion</string>
+    <string name="addPeliculaOK">Pelicula añadida a la lista de favoritos</string>
+    <string name="addPeliculaKO">La película ya está añadida</string>
 </resources>

@@ -37,8 +37,6 @@ class FavoritosActivity : AppCompatActivity() {
         val userResult = Usuario.getUserByEmail(intent.getStringExtra(FavoritosActivity.PARAM_EMAIL))
         forecastFavList.layoutManager = LinearLayoutManager(this)
 
-        println("++++++++++++++++ " + userResult.toString())
-
         if(userResult != null &&  userResult.peliculasFavoritasID.isNotEmpty())
             doAsync() {
                 val listaFilm: MutableList<Film> = FilmProvider.getFilmsById(userResult.peliculasFavoritasID)
@@ -54,8 +52,8 @@ class FavoritosActivity : AppCompatActivity() {
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menu!!.add(0,0,0, "Categorías")
-        menu!!.add(0,1,0, "Cerrar sesion")
+        menu!!.add(0,0,0, getString(R.string.categorias))
+        menu!!.add(0,1,0, getString(R.string.cerrarSesion))
         return true
     }
 

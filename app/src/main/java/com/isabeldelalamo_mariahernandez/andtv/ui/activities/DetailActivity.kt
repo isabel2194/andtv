@@ -68,15 +68,15 @@ class DetailActivity : AppCompatActivity() {
     fun añadirFavorito(filmId:Int){
         val result : Boolean = Usuario.addFavoriteFilm(filmId, intent.getStringExtra(DetailActivity.PARAM_USER))
         if(result)
-            toast("Pelicula añadida a la lista de favoritos")
+            toast(getString(R.string.addPeliculaOK))
         else
-            toast("La película ya está añadida")
+            toast(getString(R.string.addPeliculaKO))
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menu!!.add(0,0,0, "Categorías")
-        menu!!.add(0,1,0, "Favoritos")
-        menu!!.add(0,2,0, "Cerrar sesion")
+        menu!!.add(0,0,0, getString(R.string.categorias))
+        menu!!.add(0,1,0, getString(R.string.favoritos))
+        menu!!.add(0,2,0, getString(R.string.cerrarSesion))
         return true
     }
 

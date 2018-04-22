@@ -53,8 +53,8 @@ class Principal : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menu!!.add(0,0,0, "Favoritos")
-        menu!!.add(0,1,0, "Cerrar sesion")
+        menu!!.add(0,0,0, getString(R.string.favoritos))
+        menu!!.add(0,1,0, getString(R.string.cerrarSesion))
         return true
     }
 
