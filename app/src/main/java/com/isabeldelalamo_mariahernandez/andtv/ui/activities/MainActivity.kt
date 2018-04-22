@@ -19,20 +19,6 @@ class MainActivity : AppCompatActivity() {
         buttonEnviar.setOnClickListener{ validarEntrada() }
 
         buttonCambiarModo.setOnClickListener { cambiarModo() }
-/*
-        var str = "[1, 2, 3]"
-        var empty = emptyList<Int>().toString()
-        println("+++++++++++++++++++++++++++ lenght " + empty.length)
-        str = str.substring(1, str.length-1)
-        empty = empty.substring(1, empty.length-1)
-
-        println("+++++++++++++++++++++++++++ " + str)
-        var result: List<Int> = str.split(",").map { it.trim().toInt() }
-        var result2: List<Int> = empty.split(",").map { it.trim().toInt() }
-        println("+++++++++++++++++++++++++++ " + result)
-        println("+++++++++++++++++++++++++++ " + result2)
-        println("+++++++++++++++++++++++++++ " + emptyList<Int>().toString())
-        */
     }
 
     private fun cambiarModo(){
@@ -69,8 +55,6 @@ class MainActivity : AppCompatActivity() {
                 else{
                     Usuario.saveUsuario(email, password)
                     toast(getString(R.string.usuarioCreado))
-                    //CREAR USUARIO E INICIAR SESIÓN
-                    //irAPrincipal()
                 }
             }
         }

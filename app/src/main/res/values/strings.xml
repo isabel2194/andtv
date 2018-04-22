@@ -18,4 +18,5 @@
     <string name="usuarioYaExiste">El email introducido ya existe</string>
     <string name="usuarioCreado">Usuario creado correctamente</string>
     <string name="loginInvalido">Usuario o contraseña incorrectos</string>
+    <string name="verFavoritos">Favoritos</string>
 </resources>
