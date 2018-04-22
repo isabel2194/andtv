@@ -22,12 +22,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun initialize() {
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        //setSupportActionBar(toolbar)
 
-        txDate.text = intent.getStringExtra(EXTRA_DATE)
-        txDescription.text = intent.getStringExtra(EXTRA_DESCRIPTION)
-        txMinTemperature.text = "${intent.getDoubleExtra(EXTRA_MIN_TEMPERATURE, 0.0)}º"
-        txMaxTemperature.text = "${intent.getDoubleExtra(EXTRA_MAX_TEMPERATURE, 0.0)}º"
     }
 }

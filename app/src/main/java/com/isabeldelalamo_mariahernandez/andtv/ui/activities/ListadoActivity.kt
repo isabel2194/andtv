@@ -1,7 +1,8 @@
-package com.isabeldelalamo_mariahernandez.andtv
+package com.isabeldelalamo_mariahernandez.andtv.ui.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.isabeldelalamo_mariahernandez.andtv.R
 
 class ListadoActivity : AppCompatActivity() {
 
