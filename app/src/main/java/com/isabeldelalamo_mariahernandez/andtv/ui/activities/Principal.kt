@@ -21,8 +21,7 @@ class Principal : AppCompatActivity() {
 
     private fun initialize() {
         val layoutCategories = findViewById(R.id.LinearLayoutPrincipalCategories) as LinearLayout
-
-
+        
         doAsync() {
 
             val result = CategoriesProvider.getCategories()

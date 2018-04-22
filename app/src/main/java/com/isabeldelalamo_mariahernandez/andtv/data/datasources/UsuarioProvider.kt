@@ -6,8 +6,11 @@ import com.isabeldelalamo_mariahernandez.andtv.model.Usuario
 object UsuarioProvider {
     private val SOURCE = UsuarioDb()
 
-    fun getUserByEmail(email: String): Usuario?{
-        return SOURCE.getUserByEmail(email)
-        //return Usuario(email="", password = "", peliculasFavoritasID = listOf(1, 2, 3))
+    fun getUserByEmail(em:String): Usuario?{
+        return SOURCE.getUserByEmail(em)
+    }
+
+    fun saveUsuario(em:String, pass:String){
+        SOURCE.saveUsuario(em, pass)
     }
 }
