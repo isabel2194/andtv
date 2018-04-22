@@ -35,7 +35,10 @@ class MainActivity : AppCompatActivity() {
     private fun validarEntrada(){
         val email = editTextCorreo.text.toString()
         val password = editTextPassword.text.toString()
-/*
+
+
+
+
         if(editTextPasswordRepeat.visibility == View.VISIBLE) {
             val repeatPassword = editTextPasswordRepeat.text.toString()
             if(email.isNullOrEmpty() || password.isNullOrEmpty() || repeatPassword.isNullOrEmpty())
@@ -46,32 +49,37 @@ class MainActivity : AppCompatActivity() {
                 toast(getString(R.string.emailValido))
             else{
                 //comprobar usuario con ese email
-                if(false)
+                val userResult = Usuario.getUserByEmail(email)
+                if(userResult != null)
                     toast(getString(R.string.usuarioYaExiste))
-                else
-                    irAPrincipal()
+                else{
+                    Usuario.saveUsuario(email, password)
+                    toast(getString(R.string.usuarioCreado))
+                }
             }
         }
         else {
             if(email.isNullOrEmpty() || password.isNullOrEmpty())
                 toast(getString(R.string.rellenarValores))
+            else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
+                toast(getString(R.string.emailValido))
             else{
                 //comprobar usuario con ese email
-                if(false)
-                    toast(getString(R.string.usuarioYaExiste))
+                val userResult = Usuario.getUserByEmail(email)
+                if(userResult != null && userResult.password == password)
+                    irAPrincipal(userResult.email)
                 else
-                    irAPrincipal()
+                    toast(getString(R.string.loginInvalido))
             }
         }
-        */
 
-        //TODO
-        val result = Usuario.getUserByEmail(email)
-        println(result)
+
+
 
     }
 
-    private fun irAPrincipal(){
-        startActivity<Principal>()
+    private fun irAPrincipal(email:String){
+        startActivity<Principal>(
+                Principal.PARAM_EMAIL to email)
     }
 }

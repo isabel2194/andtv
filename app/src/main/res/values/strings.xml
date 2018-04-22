@@ -16,4 +16,7 @@
     <string name="contrasenasNoIguales">Las contraseñas no son iguales</string>
     <string name="emailValido">Formato de email inválido</string>
     <string name="usuarioYaExiste">El email introducido ya existe</string>
+    <string name="usuarioCreado">Usuario creado correctamente</string>
+    <string name="loginInvalido">Usuario o contraseña incorrectos</string>
+    <string name="verFavoritos">Favoritos</string>
 </resources>

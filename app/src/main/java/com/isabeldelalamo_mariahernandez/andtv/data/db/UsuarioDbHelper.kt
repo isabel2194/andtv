@@ -4,7 +4,7 @@ import android.database.sqlite.SQLiteDatabase
 import com.isabeldelalamo_mariahernandez.andtv.ui.App
 import org.jetbrains.anko.db.*
 
-class UsuarioDbHelper : ManagedSQLiteOpenHelper(App.instance,
+class UsuarioDbHelper() : ManagedSQLiteOpenHelper(App.instance,
         UsuarioDbHelper.DB_NAME, null, UsuarioDbHelper.DB_VERSION) {
 
     companion object {
@@ -25,5 +25,4 @@ class UsuarioDbHelper : ManagedSQLiteOpenHelper(App.instance,
         db.dropTable(UsuarioTable.NAME, true)
         onCreate(db)
     }
-
 }
