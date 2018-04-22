@@ -6,17 +6,51 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <TextView
+        android:id="@+id/textTitleFilm"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
+        android:layout_height="wrap_content"
+        android:padding="20px"
+        android:text="Harry Potter y el misterio del principe"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        tools:fontFamily="casual"
+        tools:textSize="24sp" />
 
-    <include
-        layout="@layout/card_forecast_item"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        tools:padding="20px" />
+
+    <TextView
+        android:id="@+id/textSinopsisFilm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20px"
+        android:text="Con dieciséis años cumplidos, Harry inicia el sexto curso en Hogwarts en medio de terribles acontecimientos que asolan Inglaterra. Elegido capitán del equipo de quidditch, los ensayos, los exámenes y las chicas ocupan todo su tiempo, pero la tranquilidad dura poco." />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp" />
+        android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDetailAtras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="20px"
+                android:text="Atras" />
+
+            <Button
+                android:id="@+id/btnDetailFavorito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="20px"
+                android:text="Añadir a mi lista" />
+
+    </LinearLayout>
 </LinearLayout>

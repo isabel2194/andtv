@@ -19,9 +19,6 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun initialize() {
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         val filmId = intent.getIntExtra(DetailActivity.PARAM_FILM, 0)
     }
 }
